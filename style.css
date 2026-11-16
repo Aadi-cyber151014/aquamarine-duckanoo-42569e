@@ -1,0 +1,138 @@
+#crosshair{
+    position:fixed;
+    left:50%;
+    top:50%;
+
+    width:20px;
+    height:20px;
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+    z-index:9999;
+}
+
+#crosshair::before,
+#crosshair::after{
+
+    content:"";
+
+    position:absolute;
+
+    background:white;
+
+}
+
+#crosshair::before{
+
+    width:2px;
+    height:20px;
+
+    left:9px;
+
+}
+
+#crosshair::after{
+
+    width:20px;
+    height:2px;
+
+    top:9px;
+
+}
+#hotbar{
+
+    position:fixed;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:6px;
+
+    z-index:9999;
+
+}
+
+.slot{
+
+    width:48px;
+    height:48px;
+
+    background:#8B8B8B;
+
+    border:2px solid #3c3c3c;
+
+    box-shadow:
+        inset 2px 2px #ffffff55,
+        inset -2px -2px #00000055;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:
+        transform 0.12s ease,
+        border 0.12s ease,
+        box-shadow 0.12s ease;
+
+}
+.slot.selected{
+
+    transform:translateY(-3px);
+
+}
+
+.icon{
+
+    width:32px;
+    height:32px;
+
+    image-rendering:pixelated;
+
+    background-image:url("/textures/atlas.png");
+
+    background-repeat:no-repeat;
+
+    background-size:128px 128px;
+
+    transition:transform 0.12s ease;
+
+}
+.slot.selected .icon{
+
+    transform:scale(1.08);
+
+}
+.slot:hover{
+
+    transform:translateY(-3px);
+
+}
+#selector{
+
+    position:absolute;
+
+    width:48px;
+    height:48px;
+
+    border:3px solid white;
+
+    box-sizing:border-box;
+
+    pointer-events:none;
+
+    transition:
+        left 0.12s ease,
+        transform 0.12s ease;
+
+    top:0;
+
+}
